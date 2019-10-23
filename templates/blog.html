@@ -1,0 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Liu+Jian+Mao+Cao|Unkempt&display=swap" rel="stylesheet">
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    
+    <h1>Build a Blog</h1>
+
+    {% if posts|length == 0 %}
+    <h3>No posts yet <span class="darn">:(</span></h3>
+    {% else %}
+    
+    {% for post in posts %}
+    
+    <a href="/blog?id={{post.id}}"><h2>{{post.title}}</h2></a>
+    <p>{{post.body}}</p>
+    <hr>            
+    
+    {% endfor %}  
+
+    {% endif %}
+    <style>
+    h1 {
+        
+        font-family: 'Fredericka the Great', cursive;
+    }
+    .darn {
+        color: red;
+    }
+    h3 {
+        font-family: 'Unkempt', cursive;
+
+    }
+    p{
+        font-family: 'Liu Jian Mao Cao', cursive;  
+    }
+    </style>
+
+{% endblock %}

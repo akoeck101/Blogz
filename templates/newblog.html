@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add Blog Entry</h1>
+    <br>
+    
+        
+    </form>
+
+    <form method = "POST">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Blog Title:</label>
+              <input type="title" class="form-control" id="exampleFormControlInput1" name='title_blog'placeholder="Enter your blog title here..." value="{{blog_title}}">
+              <p class="error">{{title_error}}</p>
+            </div>
+           
+
+
+            <div class="form-group">
+                
+                
+              <label for="exampleFormControlTextarea1">Blog Entry:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" name="new_blog_entry"value="{{blog_body}}"placeholder="Enter blog stuff here..."rows="3">{{blog_body}}</textarea>
+            </div>
+            <p class="error">{{body_error}}</p>
+
+            
+
+        <input type="submit" value='Submit Post'class="btn btn-dark">
+          </form>  
+{% endblock %}   
+

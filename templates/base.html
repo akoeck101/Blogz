@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+        <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+        
+<head>
+
+    <title>{{title}}</title>
+   
+</head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul class=flashes>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="/blog">Main Blog Page</a> | 
+        <a href="/newblog">Add a Blog Entry</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
+<style>
+    h1{
+        text-align: center;
+        color: rgb(245, 58, 136);
+        font-size: 40px;
+        font-family: 'Fredericka the Great', cursive;
+    }
+    .error{
+        color: red;
+    }
+    a {
+        font-family: 'Fascinate Inline', cursive;
+
+    }
+</style>
