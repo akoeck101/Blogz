@@ -1,0 +1,21 @@
+<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Liu+Jian+Mao+Cao|Unkempt&display=swap" rel="stylesheet">
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for user in users %}
+<ul>
+    <li><a href="/blog?user={{user.id}}">{{user.username}}</a></li>
+</ul>
+{% endfor %}
+
+<style>
+    a {
+        
+        font-family: 'Fredericka the Great', cursive;
+    }
+    
+    </style>
+{% endblock %}
